@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 03:12:01 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/13 22:27:29 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:10:39 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_rm(int *stack)
 		stack[i] = stack[i + 1];
 		i++;
 	}
-	stack[i] = 0;
+	stack[i - 1] = 0;
 }
 
 void	ft_push(t_stack *stack, int move)

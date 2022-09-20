@@ -6,23 +6,23 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 22:05:43 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/16 16:01:07 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:19:24 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushlib.h"
 
-void	ft_sort(int argc, t_stack *stack)
+void	ft_sort(int args, t_stack *stack)
 {
-	if (argc < 4)
+	if (args < 4)
 		ft_sort_swap(stack, SA);
-	else if (argc < 5)
+	else if (args < 5)
 		ft_3num(stack);
-	else if (argc < 7)
-		ft_5num(stack, argc);
+	else if (args < 7)
+		ft_5num(stack, args);
 	else
 	{
-		ft_lrg_atob(stack, argc);
+		ft_lrg_atob(stack, args);
 		ft_lrg_btoa(stack);
 	}
 }

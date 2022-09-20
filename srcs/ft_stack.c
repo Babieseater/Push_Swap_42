@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 14:11:27 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/16 15:51:42 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:20:00 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void	*ft_stack_init(int argc, char **argv, t_stack *stack)
 		stack->chunk = 33;
 	else
 		stack->chunk = 15;
+	stack->chunkadd = stack->chunk;
 	return (stack);
 }

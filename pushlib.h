@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:43:39 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/16 15:31:49 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:33:11 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ typedef struct s_stack
 	int		*b;
 	int		i;
 	int		chunk;
-	int		nxtnb;
 	int		chunkadd;
+	int		nxtnb;
 	int		blast;
 	int		splitsize;
 	char	*split;
+	int		moves;
 }	t_stack;
 
 int			ft_nxtnb(int *stack, int nb, int chunk);

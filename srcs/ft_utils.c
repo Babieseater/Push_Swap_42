@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:51:24 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/16 15:51:16 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:38:18 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_nxtnb(int *stack, int nb, int chunk)
 
 	i = 0;
 	while ((stack[i] <= ((nb / 2) - chunk))
-		|| stack[i] > ((nb / 2) + chunk))
+		|| stack[i] >= ((nb / 2) + chunk))
 		i++;
 	top = stack[i];
 	ii = ft_stacksize(stack) - 1;

@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:44:14 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/16 16:14:32 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:27:42 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,24 @@ void	ft_print_stack(t_stack *stack)
 	while (stack->b[++i] != 0)
 		printf("[\033[0;36m%03d\033[0;37m]", stack->b[i]);
 	printf("\n");
+	stack->moves++;
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
+	int		sf;
 
-	stack.i = 0;
+	sf = 0;
 	if (argc < 2)
 		ft_error("Not enough arguments");
-	if (ft_strchr(argv[1], 32) != 0 && argc == 2)
+	if (ft_strchr(argv[1], 32) != NULL && argc == 2)
 	{
 		stack.split = ft_strjoin("push_swap ", argv[1]);
 		argc = ft_splitsize(stack.split, 32);
 		argv = ft_split(stack.split, 32);
 		free (stack.split);
-		stack.i = 1; // flag de split
+		sf = 3; // flag de split
 	}
 	ft_errors_check(argv);
 	if (ft_check_sort(argv) == 0)
@@ -64,9 +66,10 @@ int	main(int argc, char **argv)
 	printf("Argc :%d\n", argc);
 	ft_print_stack(&stack);
 	ft_sort(argc, &stack);
-	if (stack.i == 1)
+	if (sf == 3)
 		ft_free_ptr(argv);
 	free(stack.a);
 	free(stack.b);
+	printf("MOVES%d\n", stack.moves);
 	return (0);
 }
