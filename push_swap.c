@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 01:44:14 by smayrand          #+#    #+#             */
-/*   Updated: 2022/09/20 15:27:42 by smayrand         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:43:19 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,17 @@ int	main(int argc, char **argv)
 		argc = ft_splitsize(stack.split, 32);
 		argv = ft_split(stack.split, 32);
 		free (stack.split);
-		sf = 3; // flag de split
+		sf = 3;
 	}
 	ft_errors_check(argv);
 	if (ft_check_sort(argv) == 0)
 		exit (0);
 	ft_stack_init(argc, argv + 1, &stack);
-	printf("Argc :%d\n", argc);
 	ft_print_stack(&stack);
 	ft_sort(argc, &stack);
 	if (sf == 3)
 		ft_free_ptr(argv);
 	free(stack.a);
 	free(stack.b);
-	printf("MOVES%d\n", stack.moves);
 	return (0);
 }
